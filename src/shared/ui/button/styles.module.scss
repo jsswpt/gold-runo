@@ -2,6 +2,10 @@
 @use "../../modules/units.module";
 
 .button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
   padding: 0 funcs.px-rem(25);
   background: none;
   border-radius: 0;
@@ -9,6 +13,19 @@
   border: none;
 
   font-size: funcs.px-rem(18);
+  font-weight: 400;
+
+  white-space: nowrap;
+
+  cursor: pointer;
+
+  transition: 0.16s ease-out;
+
+  color: var(--text-primary);
+
+  &:hover {
+    box-shadow: 0 0 funcs.px-rem(24) rgba(0, 0, 0, 0.25);
+  }
 }
 
 .small {
@@ -26,6 +43,20 @@
 .bg_inherit {
   background: var(--background);
   color: var(--text-primary);
+}
+
+.bg_on_hover_default {
+  &:hover {
+    background: var(--base);
+    color: var(--text-contrast);
+  }
+}
+
+.bg_on_hover_inherit {
+  &:hover {
+    background: var(--background);
+    color: var(--text-primary);
+  }
 }
 
 .border_default {

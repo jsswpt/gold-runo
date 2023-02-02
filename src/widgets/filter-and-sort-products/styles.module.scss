@@ -1,7 +1,15 @@
 @use "../../shared/modules/funcs.module";
 
+.filter_and_sort_wrap {
+  padding: funcs.px-rem(32) 0;
+  display: flex;
+}
+
 .filter_and_sort_left {
   display: flex;
   align-items: center;
-  gap: funcs.px-rem(40);
+  column-gap: funcs.px-rem(40);
+  row-gap: funcs.px-rem(15);
+
+  flex-wrap: wrap;
 }

@@ -2,18 +2,20 @@ import { ButtonHTMLAttributes } from "react";
 
 import st from "./styles.module.scss";
 import cn from "classnames";
+import Link, { LinkProps } from "next/link";
 
-interface Button extends ButtonHTMLAttributes<HTMLButtonElement> {
+interface Button extends LinkProps {
   size?: "small" | "medium" | "large";
   color?: "default" | "inherit";
   variant?: "outlined" | "contained";
   bgOnHover?: "default" | "inherit";
+  href: string;
 }
 
-export const Button = (props: Button) => {
+export const ButtonLink = (props: Button) => {
   const { size, color, variant, className, bgOnHover, ...restProps } = props;
   return (
-    <button
+    <Link
       {...restProps}
       className={cn(st.button, className, {
         [st.small]: size === "small",
@@ -35,6 +37,6 @@ export const Button = (props: Button) => {
       })}
     >
       {props.children}
-    </button>
+    </Link>
   );
 };

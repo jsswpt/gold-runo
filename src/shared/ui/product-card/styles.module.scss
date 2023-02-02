@@ -1,0 +1,41 @@
+@use "../../modules/funcs.module";
+
+.product_card {
+}
+
+.product_img {
+  height: funcs.px-rem(300);
+  background: var(--stroke);
+}
+
+.product_body {
+  padding: funcs.px-rem(32) 0;
+}
+
+.product_wrap_name {
+  margin-bottom: funcs.px-rem(12);
+}
+
+.product_name {
+  color: var(--text-primary);
+}
+
+.product_wrap_price {
+  margin-bottom: funcs.px-rem(20);
+  display: flex;
+  align-items: center;
+}
+
+.product_price {
+  color: var(--text-primary);
+}
+
+.product_current_price {
+  margin-right: funcs.px-rem(25);
+}
+
+.product_old_price {
+  margin-right: funcs.px-rem(38);
+  font-weight: 500;
+  color: var(--text-secondary);
+}

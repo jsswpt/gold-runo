@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState, useCallback } from "react";
+import { useEffect, useState, createRef, useRef } from "react";
 
 import st from "./styles.module.scss";
 import cn from "classnames";
@@ -10,17 +10,44 @@ type Dropdown = {
 };
 
 export const Dropdown = (props: Dropdown) => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isChecked, setIsChecked] = useState(false);
 
-  const toggleIsOpen = () => {
-    setIsOpen((state) => !state);
+  const menuRef = createRef<HTMLDivElement>();
+  const buttonRef = useRef<HTMLDivElement>();
+
+  const clickHandler = (e: MouseEvent) => {
+    const path = e.composedPath();
+
+    if (
+      !path.includes(buttonRef.current!) &&
+      !path.includes(menuRef.current!)
+    ) {
+      setIsChecked(false);
+    }
   };
+
+  useEffect(() => {
+    document.addEventListener("click", clickHandler);
+  }, []);
+
   return (
     <div className={st.dropdown_wrapper}>
-      <div onClick={toggleIsOpen}>{props.anchorEl}</div>
+      <div onClick={() => setIsChecked((state) => !state)} ref={buttonRef}>
+        {props.anchorEl}
+      </div>
 
-      <Menu className={st.dropdown_menu} isOpen={isOpen}>
-        {props.children}???
+      <Menu
+        ref={menuRef}
+        initial={{ height: 0, overflowY: "hidden", opacity: 0 }}
+        animate={
+          isChecked
+            ? { height: "29.375rem", overflowY: "auto", opacity: 1 }
+            : { height: 0, overflowY: "hidden", opacity: 0 }
+        }
+        className={st.dropdown_menu}
+        isChecked={isChecked}
+      >
+        {props.children}
       </Menu>
     </div>
   );

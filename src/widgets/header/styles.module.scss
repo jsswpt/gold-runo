@@ -1,4 +1,5 @@
 @use "../../shared/modules/funcs.module";
+@use "../../shared/modules/breakpoints.module";
 
 .header {
   display: flex;
@@ -8,12 +9,20 @@
 .header_container {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: funcs.px-rem(71);
 }
 
 .header_logo_wrapper {
   display: block;
-  width: funcs.px-rem(190);
+  width: funcs.px-rem(120);
+
+  @include breakpoints.media-screen(breakpoints.$md) {
+    width: funcs.px-rem(155);
+  }
+  @include breakpoints.media-screen(breakpoints.$xl) {
+    width: funcs.px-rem(190);
+  }
 }
 
 .header_wrap__search {
@@ -28,6 +37,7 @@
 
 .phone {
   color: var(--text-secondary);
+  white-space: nowrap;
 
   &:hover {
     color: var(--text-primary);

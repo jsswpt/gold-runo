@@ -9,6 +9,5 @@
 
   @include breakpoints.media-screen(breakpoints.$xl) {
     width: breakpoints.$xl;
-    box-shadow: 0 0 1px black;
   }
 }

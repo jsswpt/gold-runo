@@ -1,8 +1,10 @@
 @use "../../modules/funcs.module";
 
 .top_nav {
+  padding: funcs.px-rem(4) 0;
   display: flex;
-  height: funcs.px-rem(40);
+  overflow-y: hidden;
+  overflow-x: auto;
 }
 
 .top_nav_container {

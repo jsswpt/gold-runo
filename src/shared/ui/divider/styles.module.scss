@@ -1,0 +1,10 @@
+@use "../../modules/funcs.module";
+
+.divider {
+  display: block;
+  width: 100%;
+  height: funcs.px-rem(1);
+  border: none;
+
+  background: var(--stroke);
+}

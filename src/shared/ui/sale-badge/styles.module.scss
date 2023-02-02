@@ -1,0 +1,14 @@
+@use "../../modules/funcs.module";
+
+.sale_badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: funcs.px-rem(28);
+  width: funcs.px-rem(64);
+  border: funcs.px-rem(1) solid var(--text-primary);
+}
+
+.sale_title {
+  font-size: funcs.px-rem(18);
+}

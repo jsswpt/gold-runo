@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState, useCallback } from "react";
+import { forwardRef } from "react";
 
 import { motion, HTMLMotionProps, AnimatePresence } from "framer-motion";
 
@@ -9,21 +9,12 @@ interface Menu extends HTMLMotionProps<"div"> {
   isOpen: boolean;
 }
 
-export const Menu = (props: Menu) => {
+export const Menu = forwardRef<HTMLDivElement, Menu>((props: Menu, ref) => {
   const { className, isOpen, ...restProps } = props;
 
   return (
-    <motion.div
-      {...restProps}
-      initial={{ height: 0, overflowY: "hidden", opacity: 0 }}
-      animate={
-        isOpen
-          ? { height: "29.375rem", overflowY: "auto", opacity: 1 }
-          : { height: 0, overflowY: "hidden", opacity: 0 }
-      }
-      className={cn(st.menu, className)}
-    >
+    <motion.div ref={ref} {...restProps} className={cn(st.menu, className)}>
       <div className={st.menu_inner}>{props.children}</div>
     </motion.div>
   );
-};
+});

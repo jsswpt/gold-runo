@@ -1,4 +1,5 @@
 @use "../src/shared/modules/funcs.module";
+@use "../src/shared/modules/breakpoints.module";
 
 @import url(https://fonts.googleapis.com/css?family=Montserrat:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
 
@@ -30,7 +31,10 @@ img {
 }
 
 .body1 {
-  font-size: funcs.px-rem(19);
+  font-size: funcs.px-rem(16);
+  @include breakpoints.media-screen(breakpoints.$xl) {
+    font-size: funcs.px-rem(19);
+  }
   font-weight: 300;
 
   text-decoration: none;
@@ -39,19 +43,37 @@ img {
 .link1 {
   position: relative;
 
-  font-size: funcs.px-rem(23);
-  font-weight: 400;
+  font-size: funcs.px-rem(19);
+  @include breakpoints.media-screen(breakpoints.$xl) {
+    font-size: funcs.px-rem(23);
+  }
 }
 
 .link2 {
   position: relative;
 
-  font-size: funcs.px-rem(19);
+  font-size: funcs.px-rem(16);
+  @include breakpoints.media-screen(breakpoints.$xl) {
+    font-size: funcs.px-rem(19);
+  }
   font-weight: 400;
 }
 
+.subtitle1 {
+  font-size: funcs.px-rem(16);
+  @include breakpoints.media-screen(breakpoints.$xl) {
+    font-size: funcs.px-rem(20);
+  }
+}
+
 .h1 {
-  font-size: funcs.px-rem(50);
+  font-size: funcs.px-rem(30);
+  @include breakpoints.media-screen(breakpoints.$md) {
+    font-size: funcs.px-rem(40);
+  }
+  @include breakpoints.media-screen(breakpoints.$xl) {
+    font-size: funcs.px-rem(50);
+  }
   font-weight: 600;
 }
 

@@ -1,20 +1,54 @@
 @use "../../shared/modules/funcs.module";
+@use "../../shared/modules/breakpoints.module";
 
 .breadcrumbs_wrap {
   display: flex;
-  height: funcs.px-rem(93);
+  height: funcs.px-rem(90);
 }
 
-.title_wrap_container {
-  align-items: center;
-  justify-content: center;
-  height: funcs.px-rem(192);
+.products_wrap_title {
+  display: flex;
+  height: funcs.px-rem(200);
+}
 
-  & > * {
-    color: var(--text-primary);
+.title_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.products_title {
+  color: var(--text-primary);
+}
+
+.products_container {
+  flex-direction: column;
+}
+
+.products_wrap_filters {
+  display: flex;
+  height: funcs.px-rem(100);
+  background: red;
+}
+
+.products_wrap_products {
+  padding: funcs.px-rem(150) 0;
+}
+
+.products_wrap_grid {
+  width: 100%;
+  display: grid;
+  column-gap: funcs.px-rem(70);
+  row-gap: funcs.px-rem(117);
+  grid-template-columns: repeat(1, 1fr);
+
+  @include breakpoints.media-screen(breakpoints.$md) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include breakpoints.media-screen(breakpoints.$xl) {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
-.section_products {
-  padding: funcs.px-rem(38) 0;
+.products_grid_item {
 }
