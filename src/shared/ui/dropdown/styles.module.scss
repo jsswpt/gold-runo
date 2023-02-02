@@ -1,0 +1,13 @@
+@use "../../modules/funcs.module";
+
+.dropdown_wrapper {
+  position: relative;
+}
+
+.dropdown_menu {
+  position: absolute;
+  left: 0;
+  top: 100%;
+
+  transform: translate(0, funcs.px-rem(12));
+}

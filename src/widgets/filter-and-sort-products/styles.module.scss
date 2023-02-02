@@ -1,0 +1,7 @@
+@use "../../shared/modules/funcs.module";
+
+.filter_and_sort_left {
+  display: flex;
+  align-items: center;
+  gap: funcs.px-rem(40);
+}

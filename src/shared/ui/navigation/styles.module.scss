@@ -1,0 +1,25 @@
+@use "../../modules/funcs.module";
+
+.top_nav {
+  display: flex;
+  height: funcs.px-rem(40);
+}
+
+.top_nav_container {
+  display: flex;
+  align-items: center;
+}
+
+.top_nav__list {
+  display: flex;
+  align-items: center;
+  gap: funcs.px-rem(31);
+}
+
+.link {
+  color: var(--text-primary);
+
+  &:hover {
+    color: var(--text-secondary);
+  }
+}

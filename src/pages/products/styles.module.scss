@@ -1,0 +1,20 @@
+@use "../../shared/modules/funcs.module";
+
+.breadcrumbs_wrap {
+  display: flex;
+  height: funcs.px-rem(93);
+}
+
+.title_wrap_container {
+  align-items: center;
+  justify-content: center;
+  height: funcs.px-rem(192);
+
+  & > * {
+    color: var(--text-primary);
+  }
+}
+
+.section_products {
+  padding: funcs.px-rem(38) 0;
+}

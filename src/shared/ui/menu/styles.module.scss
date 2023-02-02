@@ -1,0 +1,13 @@
+@use "../../modules/funcs.module";
+
+.menu {
+  width: funcs.px-rem(330);
+  background: var(--background);
+  border-radius: 0;
+
+  box-shadow: 0 0 funcs.px-rem(32) rgba(0, 0, 0, 0.25);
+}
+
+.menu_inner {
+  padding: funcs.px-rem(40) funcs.px-rem(48);
+}

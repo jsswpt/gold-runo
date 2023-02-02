@@ -1,0 +1,69 @@
+@use "../src/shared/modules/funcs.module";
+
+@import url(https://fonts.googleapis.com/css?family=Montserrat:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+  list-style: none;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+:root {
+  --text-primary: #303030;
+  --text-secondary: #c6c6c6;
+  --text-contrast: #fff;
+
+  --base: #303030;
+
+  --background: #fff;
+
+  --stroke: #c6c6c6;
+}
+
+.body1 {
+  font-size: funcs.px-rem(19);
+  font-weight: 300;
+
+  text-decoration: none;
+}
+
+.link1 {
+  position: relative;
+
+  font-size: funcs.px-rem(23);
+  font-weight: 400;
+}
+
+.link2 {
+  position: relative;
+
+  font-size: funcs.px-rem(19);
+  font-weight: 400;
+}
+
+.h1 {
+  font-size: funcs.px-rem(50);
+  font-weight: 600;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+a {
+  line-height: 1.35;
+  transition: 0.16s ease-out;
+}

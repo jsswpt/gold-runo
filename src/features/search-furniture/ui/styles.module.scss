@@ -1,0 +1,5 @@
+@use "../../../shared/modules/funcs.module";
+
+.search_input {
+  width: funcs.px-rem(251);
+}

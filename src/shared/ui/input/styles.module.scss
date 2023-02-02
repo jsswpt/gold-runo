@@ -1,0 +1,68 @@
+@use "../../modules/units.module";
+@use "../../modules/funcs.module";
+
+.input_wrapper {
+  position: relative;
+  overflow: hidden;
+
+  &:has(.input:placeholder-shown) {
+    .icon_wrap {
+      opacity: 1;
+      top: 50%;
+    }
+  }
+}
+
+.input {
+  padding: 0 funcs.px-rem(16);
+  background: none;
+  border: funcs.px-rem(1) solid var(--stroke);
+
+  caret-color: var(--stroke);
+
+  outline: none;
+
+  &::placeholder {
+    color: var(--text-secondary);
+    letter-spacing: funcs.px-rem(0.01);
+  }
+}
+
+.medium {
+  height: units.$medium;
+}
+
+.text_start {
+  text-align: start;
+}
+
+.text_center {
+  text-align: center;
+}
+
+.icon_wrap {
+  position: absolute;
+  width: funcs.px-rem(24);
+  height: funcs.px-rem(24);
+  top: -10%;
+
+  opacity: 0;
+
+  transform: translateY(-50%);
+
+  transition: 0.32s ease-out;
+
+  & > svg {
+    width: 100%;
+    height: 100%;
+    color: var(--text-secondary);
+  }
+}
+
+.icon_start {
+  left: funcs.px-rem(22);
+}
+
+.icon_end {
+  right: funcs.px-rem(22);
+}

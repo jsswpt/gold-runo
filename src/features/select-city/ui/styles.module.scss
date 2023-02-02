@@ -1,0 +1,16 @@
+@use "../../../shared/modules/funcs.module";
+
+.select_city {
+  color: var(--text-secondary);
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 100%;
+    height: funcs.px-rem(1);
+    background-color: var(--text-secondary);
+    transform: translate(-50%, -50%);
+  }
+}

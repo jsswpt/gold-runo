@@ -1,0 +1,17 @@
+@use "../../modules/funcs.module";
+
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: funcs.px-rem(5);
+}
+
+.breadcrumb {
+  font-size: funcs.px-rem(18);
+  color: var(--text-primary);
+}
+
+.breadcrumb_active {
+  font-size: funcs.px-rem(18);
+  color: var(--text-secondary);
+}
