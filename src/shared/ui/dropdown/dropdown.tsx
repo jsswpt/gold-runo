@@ -13,7 +13,7 @@ export const Dropdown = (props: Dropdown) => {
   const [isChecked, setIsChecked] = useState(false);
 
   const menuRef = createRef<HTMLDivElement>();
-  const buttonRef = useRef<HTMLDivElement>();
+  const buttonRef = useRef<HTMLDivElement>(null);
 
   const clickHandler = (e: MouseEvent) => {
     const path = e.composedPath();
@@ -45,7 +45,6 @@ export const Dropdown = (props: Dropdown) => {
             : { height: 0, overflowY: "hidden", opacity: 0 }
         }
         className={st.dropdown_menu}
-        isChecked={isChecked}
       >
         {props.children}
       </Menu>
