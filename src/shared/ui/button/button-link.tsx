@@ -1,5 +1,3 @@
-import { ButtonHTMLAttributes } from "react";
-
 import st from "./styles.module.scss";
 import cn from "classnames";
 import Link, { LinkProps } from "next/link";
@@ -10,6 +8,8 @@ interface Button extends LinkProps {
   variant?: "outlined" | "contained";
   bgOnHover?: "default" | "inherit";
   href: string;
+  className?: any;
+  children?: React.ReactNode;
 }
 
 export const ButtonLink = (props: Button) => {
