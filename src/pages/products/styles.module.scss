@@ -4,9 +4,10 @@
 .breadcrumbs_wrap {
   display: flex;
   height: funcs.px-rem(90);
+  overflow-x: scroll;
 }
 
-.products_wrap_title {
+.section_welcome {
   display: flex;
   height: funcs.px-rem(200);
 }
@@ -31,7 +32,7 @@
   background: red;
 }
 
-.products_wrap_products {
+.section_products {
   padding: funcs.px-rem(150) 0;
 }
 
@@ -39,16 +40,86 @@
   width: 100%;
   display: grid;
   column-gap: funcs.px-rem(70);
-  row-gap: funcs.px-rem(117);
+  row-gap: funcs.px-rem(70);
   grid-template-columns: repeat(1, 1fr);
 
   @include breakpoints.media-screen(breakpoints.$md) {
+    row-gap: funcs.px-rem(117);
     grid-template-columns: repeat(2, 1fr);
   }
-  @include breakpoints.media-screen(breakpoints.$xl) {
+  @include breakpoints.media-screen(breakpoints.$xxl) {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
-.products_grid_item {
+.banner_wrap {
+  margin: funcs.px-rem(236) 0;
+
+  position: relative;
+  display: flex;
+  height: funcs.px-rem(500);
+  background: var(--surface);
+
+  &::before {
+    position: absolute;
+    right: 0;
+    top: -45%;
+    content: "";
+    background: url("../../shared/assets/media/imgs/sofa.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    width: funcs.px-rem(2048 / 1.8);
+    height: funcs.px-rem(1152 / 1.8);
+  }
+}
+
+.banner_container {
+  padding: 0 funcs.px-rem(110);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.banner_text_wrap {
+  margin-bottom: funcs.px-rem(76);
+}
+
+.banner_title {
+  margin-bottom: funcs.px-rem(28);
+  font-size: funcs.px-rem(54);
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.banner_subtitle {
+  font-size: funcs.px-rem(30);
+  font-weight: 400;
+  color: var(--text-primary);
+}
+
+.pagination_wrap {
+  margin-top: funcs.px-rem(64);
+}
+
+.pagination_container {
+  flex-direction: column;
+}
+
+.pagination_wrap_pagination {
+  display: flex;
+  justify-content: center;
+}
+
+.pagination_wrap_buttons {
+  margin-bottom: funcs.px-rem(32);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.section_three {
+  background: var(--surface);
+  height: funcs.px-rem(1200);
 }

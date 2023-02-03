@@ -5,7 +5,7 @@
 
 .product_img {
   height: funcs.px-rem(300);
-  background: var(--stroke);
+  background: var(--surface);
 }
 
 .product_body {
@@ -38,4 +38,6 @@
   margin-right: funcs.px-rem(38);
   font-weight: 500;
   color: var(--text-secondary);
+
+  text-decoration: line-through;
 }

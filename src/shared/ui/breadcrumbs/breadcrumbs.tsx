@@ -17,7 +17,7 @@ export const Breadcrumbs = (props: Breadcrumbs) => {
           <Breadcrumb
             {...item}
             key={idx}
-            isActive={idx === props.breadcrumbs.length - 1 ? true : false}
+            isActive={idx === props.breadcrumbs.length - 1}
           />
           {idx !== props.breadcrumbs.length - 1 && (
             <p className={st.breadcrumb_active}>/</p>

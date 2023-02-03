@@ -7,7 +7,15 @@
   display: flex;
   width: 100%;
 
+  @include breakpoints.media-screen(breakpoints.$lg) {
+    width: breakpoints.$lg;
+  }
+
   @include breakpoints.media-screen(breakpoints.$xl) {
     width: breakpoints.$xl;
+  }
+
+  @include breakpoints.media-screen(breakpoints.$xxl) {
+    width: breakpoints.$xxl;
   }
 }

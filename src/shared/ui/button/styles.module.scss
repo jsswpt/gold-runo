@@ -34,6 +34,10 @@
   height: units.$medium;
 }
 .large {
+  padding: 0 funcs.px-rem(54);
+  height: units.$large;
+  font-size: funcs.px-rem(30);
+  font-weight: 500;
 }
 
 .bg_default {
@@ -64,4 +68,8 @@
 }
 .border_inherit {
   border: funcs.px-rem(1) solid var(--background);
+}
+
+.fullWidth {
+  width: 100%;
 }

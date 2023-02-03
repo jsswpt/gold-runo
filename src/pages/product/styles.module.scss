@@ -1,0 +1,125 @@
+@use "../../shared/modules/funcs.module";
+@use "../../shared/modules/breakpoints.module";
+
+.breadcrumbs_wrap {
+  display: flex;
+  height: funcs.px-rem(90);
+  overflow-x: scroll;
+}
+
+.section_info {
+  padding: funcs.px-rem(68) 0;
+}
+
+.info_container {
+  flex-direction: column;
+  gap: funcs.px-rem(80);
+
+  & > * {
+    width: 100%;
+  }
+
+  @include breakpoints.media-screen(breakpoints.$lg) {
+    flex-direction: row;
+  }
+}
+
+.info_left {
+  width: 100%;
+}
+
+.info_right {
+  position: static;
+  width: 100%;
+  @include breakpoints.media-screen(breakpoints.$lg) {
+    position: sticky;
+    top: 0;
+    width: 41.8%;
+  }
+  background: white;
+}
+
+.info_right__name {
+  margin-bottom: funcs.px-rem(13);
+}
+
+.product_short_name {
+  margin-bottom: funcs.px-rem(10);
+  font-size: funcs.px-rem(40);
+  font-weight: 500;
+
+  color: var(--text-primary);
+}
+
+.product_full_name {
+  font-size: funcs.px-rem(20);
+  font-weight: 400;
+
+  color: var(--text-primary);
+}
+
+.info_right__rating {
+  margin-bottom: funcs.px-rem(24);
+  display: flex;
+  align-items: center;
+  gap: funcs.px-rem(19);
+}
+
+.rating_stars_wrapper {
+  display: flex;
+  gap: funcs.px-rem(4);
+
+  svg {
+    width: 16px;
+    height: 16px;
+    color: var(--text-primary);
+  }
+}
+
+.reviews_link {
+  font-size: funcs.px-rem(15);
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--text-primary);
+
+  text-decoration: underline;
+}
+
+.info_right__price {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: funcs.px-rem(8);
+
+  @include breakpoints.media-screen(breakpoints.$md) {
+    align-items: center;
+    flex-direction: row;
+    gap: funcs.px-rem(24);
+  }
+
+  @include breakpoints.media-screen(breakpoints.$lg) {
+    align-items: start;
+    flex-direction: column;
+    gap: funcs.px-rem(8);
+  }
+
+  @include breakpoints.media-screen(breakpoints.$xl) {
+    flex-direction: row;
+    align-items: center;
+    gap: funcs.px-rem(24);
+  }
+
+  @include breakpoints.media-screen(breakpoints.$xxl) {
+    gap: funcs.px-rem(40);
+  }
+}
+
+.product_price {
+  color: var(--primary);
+}
+
+.product_old_price {
+  text-decoration: line-through;
+  color: var(--text-secondary);
+}

@@ -1,3 +1,9 @@
+export { ProductPhotoViewer } from "./product-photo-viewer/product-photo-viewer";
+
+export { Pagination } from "./pagination/pagination";
+
+export { PaginationButton } from "./pagination/pagination-item";
+
 export { SaleBadge } from "./sale-badge/sale-badge";
 
 export { ButtonLink } from "./button/button-link";

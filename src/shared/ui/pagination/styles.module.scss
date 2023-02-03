@@ -1,0 +1,54 @@
+@use "../../modules/funcs.module";
+@use "../../modules/units.module";
+
+.pagination_wrapper {
+  display: flex;
+  align-items: center;
+  gap: funcs.px-rem(16);
+}
+
+.pagination_item {
+  padding: 0 funcs.px-rem(8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: funcs.px-rem(48);
+  min-width: funcs.px-rem(32);
+
+  background: none;
+  border: none;
+
+  font-size: funcs.px-rem(24);
+  font-weight: 600;
+  color: var(--text-primary);
+
+  transition: 0.16s ease-out;
+
+  cursor: pointer;
+
+  &:hover {
+    background: var(--surface);
+    transform: translateY(-10%);
+  }
+}
+
+.pagination_item__active {
+  background: var(--surface);
+  transform: translateY(-10%);
+
+  color: var(--text-secondary);
+
+  cursor: default;
+}
+
+.empty_pagination_item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: funcs.px-rem(64);
+  min-width: funcs.px-rem(64);
+
+  font-size: funcs.px-rem(24);
+  font-weight: 600;
+  color: var(--text-primary);
+}

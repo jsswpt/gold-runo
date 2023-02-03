@@ -10,14 +10,25 @@ interface Button extends LinkProps {
   href: string;
   className?: any;
   children?: React.ReactNode;
+  fullWidth?: boolean;
 }
 
 export const ButtonLink = (props: Button) => {
-  const { size, color, variant, className, bgOnHover, ...restProps } = props;
+  const {
+    size,
+    color,
+    variant,
+    className,
+    fullWidth,
+    bgOnHover,
+    ...restProps
+  } = props;
   return (
     <Link
       {...restProps}
       className={cn(st.button, className, {
+        [st.fullWidth]: fullWidth,
+
         [st.small]: size === "small",
         [st.medium]: size === "medium" || !size,
         [st.large]: size === "large",

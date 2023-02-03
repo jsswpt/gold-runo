@@ -1,12 +1,19 @@
-import { useEffect, useMemo, useState, useCallback } from "react";
-
 import st from "./styles.module.scss";
 import cn from "classnames";
-import { useRouter } from "next/router";
-import { Container, Divider, ProductCard } from "@/shared/ui";
+import {
+  Button,
+  ButtonLink,
+  Container,
+  Divider,
+  Pagination,
+  ProductCard,
+} from "@/shared/ui";
 import { Breadcrumbs } from "@/shared/ui/breadcrumbs/breadcrumbs";
 import { FilterAndSortProducts } from "@/widgets";
 import { motion } from "framer-motion";
+import { Products as ProductsSection } from "./sections/products";
+import { Three } from "./sections/three";
+import { Welcome } from "./sections/welcome";
 
 type Products = {
   category: string;
@@ -30,31 +37,13 @@ export const Products = (props: Products) => {
         </Container>
       </div>
 
-      <section className={st.section_products}>
-        <div className={st.products_wrap_title}>
-          <Container className={st.title_container}>
-            <h1 className={cn("h1", st.products_title)}>Диваны</h1>
-          </Container>
-        </div>
-        <FilterAndSortProducts />
-        <Container>
-          <Divider />
-        </Container>
-        <div className={st.products_wrap_products}>
-          <Container>
-            <div className={st.products_wrap_grid}>
-              <ProductCard />
-              <ProductCard />
-              <ProductCard />
-              <ProductCard />
-              <ProductCard />
-              <ProductCard />
-              <ProductCard />
-              <ProductCard />
-            </div>
-          </Container>
-        </div>
-      </section>
+      <Welcome />
+      <FilterAndSortProducts />
+      <Container>
+        <Divider />
+      </Container>
+      <ProductsSection />
+      <Three />
     </motion.main>
   );
 };

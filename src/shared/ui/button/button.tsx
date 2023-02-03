@@ -8,14 +8,25 @@ interface Button extends ButtonHTMLAttributes<HTMLButtonElement> {
   color?: "default" | "inherit";
   variant?: "outlined" | "contained";
   bgOnHover?: "default" | "inherit";
+  fullWidth?: boolean;
 }
 
 export const Button = (props: Button) => {
-  const { size, color, variant, className, bgOnHover, ...restProps } = props;
+  const {
+    size,
+    color,
+    variant,
+    className,
+    fullWidth,
+    bgOnHover,
+    ...restProps
+  } = props;
   return (
     <button
       {...restProps}
       className={cn(st.button, className, {
+        [st.fullWidth]: fullWidth,
+
         [st.small]: size === "small",
         [st.medium]: size === "medium" || !size,
         [st.large]: size === "large",

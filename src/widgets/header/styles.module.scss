@@ -20,7 +20,7 @@
   @include breakpoints.media-screen(breakpoints.$md) {
     width: funcs.px-rem(155);
   }
-  @include breakpoints.media-screen(breakpoints.$xl) {
+  @include breakpoints.media-screen(breakpoints.$xxl) {
     width: funcs.px-rem(190);
   }
 }

@@ -12,9 +12,9 @@ export const ProductCard = () => {
   return (
     <motion.article
       initial={{ scale: 0, opacity: 0 }}
-      whileInView={{ scale: 1, opacity: 1 }}
+      whileInView={{ scale: 1, opacity: [0, 0.25, 0.5, 0.75, 1] }}
       viewport={{ once: true }}
-      transition={{ duration: 0.64 }}
+      transition={{ duration: 0.32 }}
       className={st.product_card}
     >
       <div className={st.product_img}></div>
