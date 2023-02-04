@@ -1,0 +1,15 @@
+@use "../../../shared/modules/funcs.module";
+
+.select_color_name {
+  margin-bottom: funcs.px-rem(26);
+}
+
+.color_name {
+  color: var(--text-primary);
+}
+
+.select_color_colors {
+  display: flex;
+  align-items: center;
+  gap: funcs.px-rem(18);
+}

@@ -1,0 +1,39 @@
+@use "../../modules/funcs.module";
+
+.radio_wrapper {
+  &:has(input:hover) {
+    .radio {
+      opacity: 0.98;
+      box-shadow: 0 0 funcs.px-rem(8) rgba(0, 0, 0, 0.1);
+    }
+  }
+  &:has(input:checked) {
+    .radio {
+      background: var(--base);
+      color: var(--text-contrast);
+    }
+  }
+  &:has(input:checked:hover) {
+    .radio {
+      background: var(--base);
+      color: var(--text-contrast);
+    }
+  }
+}
+
+.radio {
+  padding: 0 funcs.px-rem(20);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: funcs.px-rem(31);
+
+  background: none;
+  border: funcs.px-rem(1) solid var(--text-primary);
+
+  font-size: funcs.px-rem(18);
+  font-weight: 400;
+  color: var(--text-primary);
+
+  transition: 0.16s ease-out;
+}

@@ -1,3 +1,5 @@
+export { CustomRadio } from "./custom-radio/custom-radio";
+
 export { ProductPhotoViewer } from "./product-photo-viewer/product-photo-viewer";
 
 export { Pagination } from "./pagination/pagination";

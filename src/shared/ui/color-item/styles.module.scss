@@ -1,0 +1,51 @@
+@use "../../modules/funcs.module";
+
+.color_item_wrapper {
+  position: relative;
+  &::before {
+    z-index: -1;
+    content: "";
+    position: absolute;
+    left: -45%;
+    top: -45%;
+    right: -45%;
+    bottom: -45%;
+
+    scale: 0;
+
+    border-radius: 50%;
+    border: none;
+    transition: 0.16s ease-out;
+  }
+
+  &:has(input:hover) {
+    &::before {
+      background: rgba(0, 0, 0, 0.05);
+    }
+  }
+
+  &:has(input:checked) {
+    .color_item {
+      scale: 1.25;
+    }
+    &::before {
+      border: funcs.px-rem(1) solid var(--text-secondary);
+      scale: 1;
+    }
+  }
+
+  &:has(input:checked:hover) {
+    &::before {
+      background: none;
+    }
+  }
+}
+
+.color_item {
+  display: block;
+  width: funcs.px-rem(31);
+  height: funcs.px-rem(31);
+  border-radius: 50%;
+  background: var(--color);
+  transition: 0.16s ease-out;
+}

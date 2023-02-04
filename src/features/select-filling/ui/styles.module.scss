@@ -1,0 +1,17 @@
+@use "../../../shared/modules/funcs.module";
+
+.select_filling_name {
+  margin-bottom: funcs.px-rem(15);
+}
+
+.filling_name {
+  color: var(--text-primary);
+}
+
+.select_filling_fillings {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  column-gap: funcs.px-rem(30);
+  row-gap: funcs.px-rem(16);
+}

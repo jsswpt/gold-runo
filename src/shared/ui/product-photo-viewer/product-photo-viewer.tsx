@@ -50,7 +50,6 @@ export const ProductPhotoViewer = (props: ProductPhotoViewer) => {
           className={st.other_list}
           onReorder={setPhotos}
           values={photos}
-          axis="y"
         >
           <AnimatePresence mode="popLayout">
             {photos.map((item, idx) => (
